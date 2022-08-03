@@ -1,11 +1,13 @@
 let boton = document.getElementById("btnCalcular");
-boton.addEventListener("click", generarTabla);
+
+let capital = Number(document.getElementById("capital").value);
+let cuota = Number(document.getElementById("cuota").value);
+let interes = Number(document.getElementById("interes").value);
+
+(capital != " " && cuota != " " && interes != " ") ? boton.addEventListener("click", generarTabla) : alert("Ingrese todos los valores"); 
 
 function generarTabla(){
     document.getElementById("tab").innerHTML="";
-    let capital = Number(document.getElementById("capital").value);
-    let cuota = Number(document.getElementById("cuota").value);
-    let interes = Number(document.getElementById("interes").value);
     if(capital>0){   
         for(i=1;i<=cuota;i++){
             let montoPorMes = capital/cuota;
