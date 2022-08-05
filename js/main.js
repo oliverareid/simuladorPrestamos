@@ -1,14 +1,14 @@
-let boton = document.getElementById("btnCalcular");
+let boton = document.getElementById("boton");
 
 let capital = Number(document.getElementById("capital").value);
 let cuota = Number(document.getElementById("cuota").value);
 let interes = Number(document.getElementById("interes").value);
 
-(capital != " " && cuota != " " && interes != " ") ? boton.addEventListener("click", generarTabla) : alert("Ingrese todos los valores"); 
+(capital != " " && cuota != " " && interes != " ") ? boton.addEventListener("click", generarTabla) : Swal.fire({title: "Falta ingresar un número", text: "Complete todos los campos para continuar", icon: "warning", confirmButtonText: "Aceptar",}); 
 
 function generarTabla(){
     document.getElementById("tab").innerHTML="";
-    if(capital>0){   
+    if(capital > 0){   
         for(i=1;i<=cuota;i++){
             let montoPorMes = capital/cuota;
             let montoPorMesStr = montoPorMes.toFixed(2);
@@ -33,6 +33,11 @@ function generarTabla(){
         document.getElementById("t2").innerHTML = totalInteresesStr;
         document.getElementById("t3").innerHTML = totalStr;        
     }else{
-        alert("Falta ingresar un Número");
+        Swal.fire({
+            title: "Ingrese un número válido",
+            text: "El número ingresado debe ser mayor a 0",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+        })
     }
 }

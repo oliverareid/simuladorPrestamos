@@ -30,13 +30,13 @@ fieldset{
     border-radius: 10px;
     background-color: #d1ddbe;
 }
-button{
-    background-color: #fdfef7;
+#boton{
+    background-color: yellow;
     border: #173441 1.8px solid;
     width: 100px;
     font-family: 'Lexend', sans-serif;
     font-size: 15px;  
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 10px;
     margin-left:77%;
 }
